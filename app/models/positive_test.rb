@@ -1,0 +1,2 @@
+class PositiveTest < ApplicationRecord
+end

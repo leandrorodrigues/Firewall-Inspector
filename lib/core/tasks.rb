@@ -14,10 +14,24 @@ class Tasks
 
   def self.test_items(items)
 
+
+
+
     items.each do |item|
+      #testar negativo
+      negative_tests = NegativeTest.where(:active => 1)
+
+
+
+      #testar positivo
+      positive_tests = PositiveTest.where(:active => 1)
+
+
       if !self.make_tests item, ['brazil_country']
         @bots << item
       end
+
+
     end
 
   end
