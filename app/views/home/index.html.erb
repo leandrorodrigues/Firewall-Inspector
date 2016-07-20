@@ -1,0 +1,11 @@
+<h1>Inspect</h1>
+
+<h2>Select Log File</h2>
+<ul>
+<% @logs.each do |logfile| %>
+  <li><%= link_to logfile, readfile_path(:file => logfile)    %></li>
+<% end %>
+</ul>
+
+
+<p id="luizim" class="well ic alert"><%= session[:bots] %></p>
