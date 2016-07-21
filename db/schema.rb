@@ -13,15 +13,17 @@
 ActiveRecord::Schema.define(version: 0) do
 
   create_table "negative_tests", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string  "class_name", limit: 100,                 null: false
-    t.boolean "active",                 default: false, null: false
-    t.index ["class_name"], name: "class_name_UNIQUE", unique: true, using: :btree
+    t.string  "test_name",      limit: 100,                 null: false
+    t.boolean "active",                     default: false, null: false
+    t.boolean "result_must_be",             default: false, null: false
+    t.index ["test_name"], name: "class_name_UNIQUE", unique: true, using: :btree
   end
 
   create_table "positive_tests", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string  "class_name", limit: 100,                 null: false
-    t.boolean "active",                 default: false, null: false
-    t.index ["class_name"], name: "class_name_UNIQUE", unique: true, using: :btree
+    t.string  "test_name",      limit: 100,                 null: false
+    t.boolean "active",                     default: false, null: false
+    t.boolean "result_must_be",             default: false, null: false
+    t.index ["test_name"], name: "class_name_UNIQUE", unique: true, using: :btree
   end
 
   create_table "suspects", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

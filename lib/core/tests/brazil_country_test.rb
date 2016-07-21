@@ -24,7 +24,7 @@ class BrazilCountryTest < OriginTest
       while line = file.gets do
         columns = line.split('|')
 
-        next if columns[0] != 'lacnic' || columns[1] != 'BR' || columns[2] != 'ipv4' || columns[6] != "allocated\n"
+        next if columns[0] != 'lacnic' || columns[1] != 'BR' || columns[2] != 'ipv4'
 
         start = IPAddr.new columns[3]
         finish = IPAddr.new(start.to_i + Integer(columns[4]), Socket::AF_INET)

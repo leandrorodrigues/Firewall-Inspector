@@ -7,7 +7,8 @@ class HomeController < ApplicationController
   end
 
   def readfile
-    Core::Tasks::readfile(params[:file])
+    puts Core::Tasks::test_file_complete(params[:file]).inspect
+
 
     redirect_to root_path
   end

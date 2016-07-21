@@ -25,6 +25,8 @@ gem 'bootstrap_form', '~> 2.3.0'
 # font awesome
 gem 'font-awesome-sass'
 
+gem 'ruby-nmap'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
