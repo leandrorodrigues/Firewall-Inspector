@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="Rails Firewall-Inspector: development" uuid="b3ba7f9c-7e61-490e-bcc5-c14082839020">
+    <database-info product="MySQL" version="5.5.49-0+deb8u1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+      <schema id="1" name="inspector">
+        <visible>1</visible>
+      </schema>
+      <schema id="2" name="information_schema"/>
+      <table id="3" parent="1" name="negative_tests"/>
+      <table id="4" parent="1" name="positive_tests"/>
+      <table id="5" parent="1" name="suspects"/>
+      <column id="6" parent="3" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="7" parent="3" name="test_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)|0</data-type>
+      </column>
+      <column id="8" parent="3" name="active">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="9" parent="3" name="result_must_be">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <index id="10" parent="3" name="class_name_UNIQUE">
+        <columns>test_name</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="11" parent="3" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="12" parent="3" name="class_name_UNIQUE">
+        <columns>test_name</columns>
+        <underlying-index>class_name_UNIQUE</underlying-index>
+      </key>
+      <column id="13" parent="4" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="14" parent="4" name="test_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)|0</data-type>
+      </column>
+      <column id="15" parent="4" name="active">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="16" parent="4" name="result_must_be">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <index id="17" parent="4" name="class_name_UNIQUE">
+        <columns>test_name</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="18" parent="4" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="19" parent="4" name="class_name_UNIQUE">
+        <columns>test_name</columns>
+        <underlying-index>class_name_UNIQUE</underlying-index>
+      </key>
+      <column id="20" parent="5" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="21" parent="5" name="ip">
+        <mandatory>1</mandatory>
+        <data-type>bigint(20)|0</data-type>
+      </column>
+      <column id="22" parent="5" name="created">
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="23" parent="5" name="test_log">
+        <data-type>text|0</data-type>
+      </column>
+      <key id="24" parent="5" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+    </database-model>
+  </data-source>
+  <data-source name="Rails Firewall-Inspector: production" uuid="9e6d5d83-126b-4025-92d2-28c9d1acc4ce">
+    <database-info product="MySQL" version="5.5.49-0+deb8u1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+      <schema id="1" name="inspector">
+        <visible>1</visible>
+      </schema>
+      <schema id="2" name="information_schema"/>
+      <table id="3" parent="1" name="negative_tests"/>
+      <table id="4" parent="1" name="positive_tests"/>
+      <table id="5" parent="1" name="suspects"/>
+      <column id="6" parent="3" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="7" parent="3" name="test_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)|0</data-type>
+      </column>
+      <column id="8" parent="3" name="active">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="9" parent="3" name="result_must_be">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <index id="10" parent="3" name="class_name_UNIQUE">
+        <columns>test_name</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="11" parent="3" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="12" parent="3" name="class_name_UNIQUE">
+        <columns>test_name</columns>
+        <underlying-index>class_name_UNIQUE</underlying-index>
+      </key>
+      <column id="13" parent="4" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="14" parent="4" name="test_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)|0</data-type>
+      </column>
+      <column id="15" parent="4" name="active">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="16" parent="4" name="result_must_be">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <index id="17" parent="4" name="class_name_UNIQUE">
+        <columns>test_name</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="18" parent="4" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="19" parent="4" name="class_name_UNIQUE">
+        <columns>test_name</columns>
+        <underlying-index>class_name_UNIQUE</underlying-index>
+      </key>
+      <column id="20" parent="5" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="21" parent="5" name="ip">
+        <mandatory>1</mandatory>
+        <data-type>bigint(20)|0</data-type>
+      </column>
+      <column id="22" parent="5" name="created">
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="23" parent="5" name="test_log">
+        <data-type>text|0</data-type>
+      </column>
+      <key id="24" parent="5" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+    </database-model>
+  </data-source>
+  <data-source name="Rails Firewall-Inspector: default" uuid="93a6a99b-6685-4007-b2da-5a47023650e8">
+    <database-info product="MySQL" version="5.5.49-0+deb8u1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+      <schema id="1" name="inspector">
+        <visible>1</visible>
+      </schema>
+      <schema id="2" name="information_schema"/>
+      <table id="3" parent="1" name="negative_tests"/>
+      <table id="4" parent="1" name="positive_tests"/>
+      <table id="5" parent="1" name="suspects"/>
+      <column id="6" parent="3" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="7" parent="3" name="test_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)|0</data-type>
+      </column>
+      <column id="8" parent="3" name="active">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="9" parent="3" name="result_must_be">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <index id="10" parent="3" name="class_name_UNIQUE">
+        <columns>test_name</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="11" parent="3" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="12" parent="3" name="class_name_UNIQUE">
+        <columns>test_name</columns>
+        <underlying-index>class_name_UNIQUE</underlying-index>
+      </key>
+      <column id="13" parent="4" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="14" parent="4" name="test_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)|0</data-type>
+      </column>
+      <column id="15" parent="4" name="active">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="16" parent="4" name="result_must_be">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <index id="17" parent="4" name="class_name_UNIQUE">
+        <columns>test_name</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="18" parent="4" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="19" parent="4" name="class_name_UNIQUE">
+        <columns>test_name</columns>
+        <underlying-index>class_name_UNIQUE</underlying-index>
+      </key>
+      <column id="20" parent="5" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="21" parent="5" name="ip">
+        <mandatory>1</mandatory>
+        <data-type>bigint(20)|0</data-type>
+      </column>
+      <column id="22" parent="5" name="created">
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="23" parent="5" name="test_log">
+        <data-type>text|0</data-type>
+      </column>
+      <key id="24" parent="5" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+    </database-model>
+  </data-source>
+  <data-source name="Rails Firewall-Inspector: test" uuid="31af9926-1dc3-4c8d-a912-2fc8755e5210">
+    <database-info product="MySQL" version="5.5.49-0+deb8u1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+      <schema id="1" name="inspector">
+        <visible>1</visible>
+      </schema>
+      <schema id="2" name="information_schema"/>
+      <table id="3" parent="1" name="negative_tests"/>
+      <table id="4" parent="1" name="positive_tests"/>
+      <table id="5" parent="1" name="suspects"/>
+      <column id="6" parent="3" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="7" parent="3" name="test_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)|0</data-type>
+      </column>
+      <column id="8" parent="3" name="active">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="9" parent="3" name="result_must_be">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <index id="10" parent="3" name="class_name_UNIQUE">
+        <columns>test_name</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="11" parent="3" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="12" parent="3" name="class_name_UNIQUE">
+        <columns>test_name</columns>
+        <underlying-index>class_name_UNIQUE</underlying-index>
+      </key>
+      <column id="13" parent="4" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="14" parent="4" name="test_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)|0</data-type>
+      </column>
+      <column id="15" parent="4" name="active">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="16" parent="4" name="result_must_be">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <index id="17" parent="4" name="class_name_UNIQUE">
+        <columns>test_name</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="18" parent="4" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="19" parent="4" name="class_name_UNIQUE">
+        <columns>test_name</columns>
+        <underlying-index>class_name_UNIQUE</underlying-index>
+      </key>
+      <column id="20" parent="5" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="21" parent="5" name="ip">
+        <mandatory>1</mandatory>
+        <data-type>bigint(20)|0</data-type>
+      </column>
+      <column id="22" parent="5" name="created">
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="23" parent="5" name="test_log">
+        <data-type>text|0</data-type>
+      </column>
+      <key id="24" parent="5" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+    </database-model>
+  </data-source>
+</component>

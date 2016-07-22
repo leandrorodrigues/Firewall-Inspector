@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'config/index'
+
   root 'home#index',  via: [:get, :post]
 
   get '/readfile' => 'home#read_log_file'

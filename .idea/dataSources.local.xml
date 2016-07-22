@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails Firewall-Inspector: development" uuid="b3ba7f9c-7e61-490e-bcc5-c14082839020">
+      <user-name>inspector</user-name>
+      <user-password>dff3dffedfdadf93dfcbdfe8dfdddfe6df99dffbdfc2dfeedfdbdfcfdf9cdfcc</user-password>
+    </data-source>
+    <data-source name="Rails Firewall-Inspector: production" uuid="9e6d5d83-126b-4025-92d2-28c9d1acc4ce">
+      <user-name>inspector</user-name>
+      <user-password>dff3dffedfdadf93dfcbdfe8dfdddfe6df99dffbdfc2dfeedfdbdfcfdf9cdfcc</user-password>
+    </data-source>
+    <data-source name="Rails Firewall-Inspector: default" uuid="93a6a99b-6685-4007-b2da-5a47023650e8">
+      <user-name>inspector</user-name>
+      <user-password>dff3dffedfdadf93dfcbdfe8dfdddfe6df99dffbdfc2dfeedfdbdfcfdf9cdfcc</user-password>
+      <introspection-scope>inspector:</introspection-scope>
+      <resolve-scope>inspector:</resolve-scope>
+    </data-source>
+    <data-source name="Rails Firewall-Inspector: test" uuid="31af9926-1dc3-4c8d-a912-2fc8755e5210">
+      <user-name>inspector</user-name>
+      <user-password>dff3dffedfdadf93dfcbdfe8dfdddfe6df99dffbdfc2dfeedfdbdfcfdf9cdfcc</user-password>
+    </data-source>
+  </component>
+</project>
