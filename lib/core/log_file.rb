@@ -1,5 +1,7 @@
 module Core
 class LogFile
+
+
   def initialize(file)
     @file = file
   end

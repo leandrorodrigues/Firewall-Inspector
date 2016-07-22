@@ -1,11 +1,27 @@
-<h1>Inspect</h1>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">LACNIC file</h3>
+  </div>
+  <div class="panel-body">
+    <p><strong>Last file update: </strong><%= @lacnic_time.strftime("%F %T") %> (<%= time_ago_in_words(@lacnic_time)%> ago.)</p>
+    <p><strong>File size:</strong> <%= Filesize.from("#{@lacnic_size.to_s} B").pretty %></p>
+  </div>
+  <div class="panel-footer">
+    <%= link_to 'Update File', updatelacnicfile_path, :class => 'btn btn-primary pull-right'%>
+    <div class="clearfix"></div>
+  </div>
+</div>
 
-<h2>Select Log File</h2>
-<ul>
-<% @logs.each do |logfile| %>
-  <li><%= link_to logfile, readfile_path(:file => logfile)    %></li>
-<% end %>
-</ul>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Firewall Logs</h3>
+  </div>
+  <div class="panel-body">
+    <p><strong>Last log file: </strong><%= @last_log %></p>
+  </div>
+  <div class="panel-footer">
+    <%= link_to 'Update File', updatelacnicfile_path, :class => 'btn btn-primary pull-right'%>
+    <div class="clearfix"></div>
+  </div>
+</div>
 
-
-<p id="luizim" class="well ic alert"><%= session[:bots] %></p>
