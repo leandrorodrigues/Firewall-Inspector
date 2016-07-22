@@ -1,13 +1,13 @@
 module Core
 class LogFile
-
+  @@logs_folder =  Rails.root.join("public/files/logs/")
 
   def initialize(file)
     @file = file
   end
 
   def get_items
-    File.open(Rails.root.join("public/files/logs/#{@file}"), 'r') do |file|
+    File.open("#{@@logs_folder}#{@file}", 'r') do |file|
 
       @items = []
       while line = file.gets do
@@ -19,6 +19,16 @@ class LogFile
     end
 
     @items
+  end
+
+  def self.get_logs_count
+    Dir.glob("#{@@logs_folder}*").count
+  end
+
+  def self.get_last_log
+    filename = Dir.glob("#{@@logs_folder}*").max_by {|file| File.mtime(file)}
+
+    File.basename(filename)
   end
 
   private

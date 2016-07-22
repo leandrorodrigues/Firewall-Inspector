@@ -5,7 +5,8 @@ class HomeController < ApplicationController
     @lacnic_time = Core::LacnicDelegatedFile::get_file_time
     @lacnic_size = Core::LacnicDelegatedFile::get_file_size
 
-    @last_log = Core::LogFile::get_lagitrst_log
+    @last_log = Core::LogFile::get_last_log
+    @logs_count = Core::LogFile::get_logs_count
   end
 
   def read_log_file
