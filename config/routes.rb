@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'logs/process_file', 'logs#process_file'
+  get 'logs/delete', 'logs#delete'
+  get 'logs', :controller => 'logs', :action => 'index'
+
   namespace "config" do
     resources :negative_tests do
       member do

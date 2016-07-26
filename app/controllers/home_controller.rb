@@ -9,13 +9,6 @@ class HomeController < ApplicationController
     @logs_count = Core::LogFile::get_logs_count
   end
 
-  def read_log_file
-    puts Core::Tasks::test_file_complete(params[:file]).inspect
-
-
-    redirect_to root_path
-  end
-
   def update_lacnic_file
     begin
       Core::LacnicDelegatedFile::update_file

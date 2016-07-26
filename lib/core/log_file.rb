@@ -21,6 +21,26 @@ class LogFile
     @items
   end
 
+  def self.get_logs
+    Dir.glob("#{@@logs_folder}*").collect{ |file_path| File.basename(file_path) }
+  end
+
+  def self.get_logs_with_details
+    Dir.glob("#{@@logs_folder}*").collect{ |file_path|
+      {
+          :file_path => file_path,
+          :file_name => File.basename(file_path),
+          :modified => File.mtime(file_path),
+          :size => File.size(file_path)
+      }
+    }
+  end
+
+  def self.delete_log(log_file)
+    path_to_file = "#{@@logs_folder}#{log_file}"
+    File.delete(path_to_file) if File.exist?(path_to_file)
+  end
+
   def self.get_logs_count
     Dir.glob("#{@@logs_folder}*").count
   end

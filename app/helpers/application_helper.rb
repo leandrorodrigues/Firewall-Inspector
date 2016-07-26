@@ -1,16 +1,18 @@
 module ApplicationHelper
 
-  def destroy_button(item)
+  def destroy_button(item, delete_path = nil, delete_method = nil)
+    delete_path ||= item
+    delete_method ||= :delete
+
     link_to icon('trash'),
-      item,
-      :method => :delete,
+      delete_path,
+      :method => delete_method,
       :data => { :confirm => 'Are you sure?' },
       :class => 'btn btn-xs btn-danger',
       :title => 'destroy'
   end
 
   def toggle_button(item, activate_path, deactivate_path = nil)
-
     deactivate_path ||= activate_path
 
     if item.active
@@ -25,6 +27,14 @@ module ApplicationHelper
          :title => 'activate item'
     end
 
+  end
+
+
+  def process_button(item, process_path)
+      return link_to  icon('magic') + ' process',
+                      process_path,
+                      :class => 'btn btn-xs btn-primary',
+                      :title => 'process item'
   end
 
 
