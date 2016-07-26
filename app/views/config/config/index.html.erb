@@ -1,0 +1,16 @@
+<div class="page-header">
+  <h1>Configuration</h1>
+</div>
+
+<h2>Negative tests</h2>
+
+<%= render 'test_table', :tests => @negative_tests, :test_type => 'negative' %>
+
+<%= link_to 'Create Negative Test', new_config_negative_test_url, :class => 'btn btn-primary' %>
+
+
+<h2>Positive tests</h2>
+
+<%= render 'test_table', :tests => @positive_tests, :test_type => 'positive' %>
+
+<%= link_to 'Create Positive Test', new_config_positive_test_url, :class => 'btn btn-primary' %>

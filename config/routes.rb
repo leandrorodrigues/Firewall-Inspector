@@ -1,5 +1,18 @@
 Rails.application.routes.draw do
-  get 'config/index'
+
+  namespace "config" do
+    resources :negative_tests do
+      member do
+        get 'toggle'
+      end
+    end
+    resources :positive_tests do
+      member do
+        get 'toggle'
+      end
+    end
+    root "config#index"
+  end
 
   root 'home#index',  via: [:get, :post]
 

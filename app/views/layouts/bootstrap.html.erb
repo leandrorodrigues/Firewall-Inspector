@@ -21,17 +21,17 @@
 
     <%= nav_bar static: :top, brand: "Inspector" do %>
       <%= menu_group do %>
-        <%= menu_item "Configuration", config_index_path %>
+        <%= menu_item "Configuration", config_root_path %>
         <%= drop_down "Firewall" do %>
-            <%= menu_item "Logs", config_index_path %>
+            <%= menu_item "Logs", '' %>
         <% end %>
         <%= drop_down "Botlist" do %>
-            <%= menu_item "Logs", config_index_path %>
+            <%= menu_item "Logs", '' %>
         <% end %>
 
       <% end %>
       <%= menu_group pull: :right do %>
-        <%= menu_item icon('gear'), config_index_path %>
+        <%= menu_item icon('gear'), config_root_path %>
       <% end %>
     <% end %>
 

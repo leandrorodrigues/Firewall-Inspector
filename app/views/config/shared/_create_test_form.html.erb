@@ -1,0 +1,14 @@
+<%= bootstrap_form_for(test, :url => eval("config_#{test_type}_tests_path(test)"), layout: :horizontal) do |f| %>
+
+    <%= f.select :test_name, Core::InterfaceUtils::get_available_tests %>
+    <%= f.collection_radio_buttons :result_must_be, [[true, 'True'], [false, 'False']], :first, :last %>
+
+    <%= f.form_group :active do %>
+        <%= f.check_box :active %>
+    <% end %>
+
+    <%= f.form_group do %>
+        <%= f.submit :class => 'btn btn-primary' %>
+    <% end %>
+
+<% end %>
