@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     root "config#index"
   end
 
+  resources :suspects
+
   root 'home#index',  via: [:get, :post]
 
   get '/readfile' => 'home#read_log_file'

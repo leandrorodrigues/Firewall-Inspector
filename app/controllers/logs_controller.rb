@@ -4,8 +4,11 @@ class LogsController < ApplicationController
   end
 
   def process_file
+    log_file = params[:log_file]
 
-    redirect_to :back
+    Core::Tasks::test_file_update_bots(log_file)
+
+    redirect_to logs_path, notice: "Log #{log_file} was successfully processed."
   end
 
   def delete
@@ -13,6 +16,6 @@ class LogsController < ApplicationController
 
     Core::LogFile::delete_log(log_file)
 
-    redirect_to :back, notice: "Log #{log_file} was successfully destroyed."
+    redirect_to logs_path, notice: "Log #{log_file} was successfully destroyed."
   end
 end

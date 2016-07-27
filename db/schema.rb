@@ -27,9 +27,10 @@ ActiveRecord::Schema.define(version: 0) do
   end
 
   create_table "suspects", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.bigint   "ip",                     null: false
+    t.bigint   "ip",                                 null: false
     t.datetime "created"
     t.text     "test_log", limit: 65535
+    t.integer  "hits",                   default: 0, null: false, unsigned: true
   end
 
 end

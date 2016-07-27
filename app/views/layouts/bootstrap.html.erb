@@ -23,10 +23,10 @@
       <%= menu_group do %>
         <%= menu_item "Configuration", config_root_path %>
         <%= drop_down "Firewall" do %>
-            <%= menu_item "Logs", '' %>
+            <%= menu_item "Logs", logs_path %>
         <% end %>
         <%= drop_down "Botlist" do %>
-            <%= menu_item "Logs", '' %>
+            <%= menu_item "Suspects", suspects_path %>
         <% end %>
 
       <% end %>

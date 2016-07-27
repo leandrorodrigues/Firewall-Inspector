@@ -1,0 +1,33 @@
+<%- model_class = Suspect -%>
+<div class="page-header">
+  <h1>Botlist <small>Suspects</small></h1>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= sortable 'id', model_class.human_attribute_name(:id) %></th>
+      <th><%= sortable 'ip', model_class.human_attribute_name(:ip) %></th>
+      <th><%= sortable 'hits', model_class.human_attribute_name(:hits) %></th>
+      <th><%=t 'actions' %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @suspects.each do |suspect| %>
+      <tr>
+        <td><%= link_to suspect.id, suspect_path(suspect) %></td>
+        <td><%= format_ip suspect.ip %></td>
+        <td><%= suspect.hits %></td>
+        <td>
+          <%= details_button(suspect) %>
+          <%= destroy_button(suspect) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="pull-right">
+  <%= paginate(@suspects) %>
+</div>
+

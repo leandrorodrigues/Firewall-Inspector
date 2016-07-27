@@ -1,0 +1,17 @@
+<%%= bootstrap_form_for @<%= resource_name %>, layout: :horizontal do |f| %>
+  <%%= f.alert_message "Please fix the errors below." %>
+
+
+<%- columns.each do |column| -%>
+  <%- if belongs_to?(column.name) -%>
+        <%%= f.collection_select :<%= column.name %>, <%= belongs_to_model(column.name)%>.all, :id, :title %>
+  <%- else -%>
+        <%%= f.<%= column.field_type %> :<%= column.name %> %>
+  <%- end -%>
+<%- end -%>
+
+  <%%= f.form_group do %>
+      <%%= f.submit :class => 'btn btn-primary'  %>
+  <%% end %>
+
+<%% end %>

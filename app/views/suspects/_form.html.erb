@@ -1,0 +1,14 @@
+<%= bootstrap_form_for @suspect, layout: :horizontal do |f| %>
+  <%= f.alert_message "Please fix the errors below." %>
+
+
+        <%= f.text_field :ip %>
+        <%= f.text_field :created %>
+        <%= f.text_field :test_log %>
+        <%= f.text_field :hits %>
+
+  <%= f.form_group do %>
+      <%= f.submit :class => 'btn btn-primary'  %>
+  <% end %>
+
+<% end %>

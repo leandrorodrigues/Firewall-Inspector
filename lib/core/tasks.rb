@@ -12,6 +12,28 @@ class Tasks
     suspects
   end
 
+  def self.test_file_update_bots(file)
+    log_suspects = test_file_complete(file)
+
+    log_suspects.each do |log_suspect|
+      origin_ip = IPAddr.new log_suspect['origin_ip']
+
+      suspect = Suspect.where(ip: origin_ip.to_i).first
+      if suspect
+        suspect.hits += 1
+      else
+        suspect = Suspect.new
+        suspect.hits = 1
+        suspect.ip = origin_ip.to_i
+        suspect.test_log = ''
+      end
+
+      suspect.test_log += "[#{Time.now.strftime('%F %T')}] Positive test catch: #{log_suspect['positive_test']} \n"
+
+      suspect.save
+    end
+  end
+
   def self.get_items_of_file(file)
     logfile = LogFile.new(file)
 
@@ -25,6 +47,7 @@ class Tasks
     negative_tests = NegativeTest.where(:active => 1)
     positive_tests = PositiveTest.where(:active => 1)
 
+    #TODO: fazer otimização para não fazer testes em IPs repetidos.
     items.each do |item|
       negative = false
 

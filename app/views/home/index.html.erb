@@ -1,11 +1,18 @@
+<div class="page-header">
+  <h1>Inspector <small>Summary</small> </h1>
+</div>
+
 <div class="panel panel-primary">
   <div class="panel-heading">
     <h3 class="panel-title">Bot List</h3>
   </div>
   <div class="panel-body">
+    <p><strong>Suspects found: </strong> <%= @suspects_count %></p>
+    <p><strong>Suspects hits: </strong> <%= @suspects_hits %></p>
+    <p><strong>Lastest suspected found:</strong> <%= format_ip @last_suspect.ip %> (<%= @last_suspect.hits %> hits)</p>
   </div>
   <div class="panel-footer text-right">
-    <%= link_to icon('list') + ' Bot list', updatelacnicfile_path, :class => 'btn btn-success'%>
+    <%= link_to icon('list') + ' Bot list', suspects_path , :class => 'btn btn-success'%>
   </div>
 </div>
 

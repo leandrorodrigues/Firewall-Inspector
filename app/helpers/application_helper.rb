@@ -1,4 +1,28 @@
 module ApplicationHelper
+  def sortable(column, title = nil)
+    title ||= column.titleize
+
+    direction =  'asc'
+    if(column == params[:sort] && params[:direction] == "asc")
+      direction = 'desc'
+    end
+
+    cls = "sortable"
+    if column == params[:sort]
+      cls = params[:direction]
+    end
+
+    link_to title, params.permit(:sort, :direction).merge({sort: column, direction: direction}), :class => cls
+  end
+
+  def details_button(item, details_path = nil)
+    details_path ||= item
+
+    link_to icon('eye'),
+            details_path,
+            :class => 'btn btn-xs btn-info',
+            :title => 'details'
+  end
 
   def destroy_button(item, delete_path = nil, delete_method = nil)
     delete_path ||= item
@@ -29,12 +53,15 @@ module ApplicationHelper
 
   end
 
-
   def process_button(item, process_path)
       return link_to  icon('magic') + ' process',
                       process_path,
                       :class => 'btn btn-xs btn-primary',
                       :title => 'process item'
+  end
+
+  def format_ip(number)
+    IPAddr.new(number, Socket::AF_INET).to_s
   end
 
 

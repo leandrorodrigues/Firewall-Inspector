@@ -7,6 +7,10 @@ class HomeController < ApplicationController
 
     @last_log = Core::LogFile::get_last_log
     @logs_count = Core::LogFile::get_logs_count
+
+    @last_suspect = Suspect.last
+    @suspects_count = Suspect.count
+    @suspects_hits = Suspect.sum(:hits)
   end
 
   def update_lacnic_file

@@ -1,0 +1,6 @@
+TCP outside2 179.154.105.87:50269 pje-dmz 172.22.0.11:443, idle 0:00:03, bytes 3530, flags UIOB
+TCP outside2 187.74.65.48:59322 pje-dmz 172.22.0.11:443, idle 0:00:03, bytes 3450, flags UIOB
+TCP outside2 167.114.251.239:58508 pje-dmz 172.22.0.11:443, idle 0:00:00, bytes 753, flags UIOB
+TCP outside2 179.232.220.207:37441 pje-dmz 172.22.0.11:443, idle 0:00:03, bytes 5458, flags UIOB
+TCP outside2 191.189.81.142:50770 pje-dmz 172.22.0.11:443, idle 0:00:03, bytes 753, flags UIOB
+TCP outside2 191.189.81.142:50769 pje-dmz 172.22.0.11:443, idle 0:00:03, bytes 753, flags UIOB
